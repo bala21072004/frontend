@@ -1,0 +1,36 @@
+To create a map image in HTML, you can use the <map> and <area> elements. These allow you to define clickable areas on an image. Here's an example inspired by W3Schools' approach:
+
+Copy the code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Map Example</title>
+</head>
+<body>
+  <h1>Clickable Image Map</h1>
+  <p>Hover over the image and click on the defined areas!</p>
+
+  <!-- Image with a map -->
+  <img src="widow.jpg"alt="World Map" usemap="#worldmap" style="width:600px;">
+
+  <!-- Defining the map -->
+  <map name="worldmap">
+    <area shape="rect" coords="50,50,150,150" href="https://example.com/region1" alt="Region 1">
+    <area shape="circle" coords="300,200,50" href="https://example.com/region2" alt="Region 2">
+    <area shape="poly" coords="400,300,450,350,500,300,450,250" href="https://example.com/region3" alt="Region 3">
+  </map>
+</body>
+</html>
+
+Explanation:
+<img>: The usemap attribute links the image to the <map> element.
+<map>: Contains the clickable areas.
+<area>:
+shape: Defines the shape of the clickable area (rect, circle, or poly).
+coords: Specifies the coordinates for the shape.
+href: The link to navigate to when the area is clicked.
+alt: Describes the area for accessibility.
+
+Replace "world-map.jpg" with your image file and adjust the coords values to match your desired clickable regions. You can use tools like Image Map Generator to simplify defining coordinates.

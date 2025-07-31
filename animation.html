@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: black;
+    }
+    #box{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation:animate 20s linear infinite;
+    }
+    @keyframes animate {
+        0%{
+            transform: perspective(1000px) rotatey(0deg);
+        }
+        100%{
+            transform: perspective(1000px) rotatex(0deg);
+        }
+    }
+    #box span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotatey(calu(var(--i)* 45deg)) translateZ(400px);
+        -webkit-box-reflect: below 0px linear-gradient(transparent,transparent, #0004);
+    }
+    #box span img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        border: 2px solid white;
+        border-radius: 18px;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+
+<body>
+    <div id="box">
+        <span style="--i: 1"><img src="america.jpg" alt=""></span>
+        <span style="--i: 2"><img src="black.webp" alt=""></span>
+        <span style="--i: 3"><img src="hulk.jpg" alt=""></span>
+        <span style="--i: 4"><img src="spider.jpg" alt=""></span>
+        <span style="--i: 5"><img src="thor.jpg" alt=""></span>
+        <span style="--i: 6"><img src="iron.jpg" alt=""></span>
+
+    </div>
+</body>
+</html>
